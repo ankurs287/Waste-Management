@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "957103967055",
+    "firebase_url": "https://my-project-269712.firebaseio.com",
+    "project_id": "my-project-269712",
+    "storage_bucket": "my-project-269712.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957103967055:android:3d19e70153950f2423933a",
+        "android_client_info": {
+          "package_name": "com.urban.wastemanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957103967055-7b07h7buuh0a3hfaoscguk36ntsk3mvr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzGy4Mjkisv_IuTr00UsxVJCbLx8Tkp9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957103967055-7b07h7buuh0a3hfaoscguk36ntsk3mvr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
