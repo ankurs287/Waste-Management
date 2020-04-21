@@ -37,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
                             .build(),
                     RC_SIGN_IN);
         } else {
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+            signInSuccess();
         }
     }
 
@@ -47,10 +47,17 @@ public class SplashActivity extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             IdpResponse response = IdpResponse.fromResultIntent(data);
             if (resultCode == RESULT_OK) {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                signInSuccess();
             } else {
                 Toast.makeText(this, "Error Logging in", Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    private void signInSuccess() {
+        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
