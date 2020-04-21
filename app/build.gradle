@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.urban.wastemanagement"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -58,5 +58,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.1.1'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.github.shivpujan12:LocationPicker:v1.2'
+
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 
 }

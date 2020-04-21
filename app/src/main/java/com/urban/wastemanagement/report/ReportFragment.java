@@ -1,4 +1,4 @@
-package com.urban.wastemanagement.notifications;
+package com.urban.wastemanagement.report;
 
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.esafirm.imagepicker.features.ImagePicker;
 import com.esafirm.imagepicker.model.Image;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -21,16 +22,16 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.shivtechs.maplocationpicker.LocationPickerActivity;
 import com.shivtechs.maplocationpicker.MapUtility;
-import com.urban.wastemanagement.databinding.FragmentNotificationsBinding;
+import com.urban.wastemanagement.databinding.FragmentReportBinding;
 import com.urban.wastemanagement.entity.Report;
 import com.urban.wastemanagement.utils.Utils;
 
 import java.io.File;
 
-public class NotificationsFragment extends Fragment {
+public class ReportFragment extends Fragment {
 
     private static final int ADDRESS_PICKER_REQUEST = 901;
-    FragmentNotificationsBinding binding;
+    private FragmentReportBinding binding;
     private Image wasteImage;
     private Double wasteLat;
     private Double wasteLng;
@@ -40,7 +41,7 @@ public class NotificationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
             ViewGroup container,
             Bundle savedInstanceState) {
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentReportBinding.inflate(inflater, container, false);
 
         binding.btnWasteImage.setOnClickListener(this::onSelectImageClicked);
         binding.btnReport.setOnClickListener(this::onReportClicked);
@@ -60,12 +61,14 @@ public class NotificationsFragment extends Fragment {
 
     private void onReportClicked(View view) {
         if (binding.rbgWasteType.getCheckedRadioButtonId() == -1) {
-            Utils.showToast(getContext(), "Select Waste Type");
+            Utils.showToast(getContext(), "Choose Waste Type");
+        } else if (binding.rbgOdour.getCheckedRadioButtonId() == -1) {
+            Utils.showToast(getContext(), "Choose Odour");
         } else if (wasteImage == null) {
-            Utils.showToast(getContext(), "Waste Images are necessary");
+            Utils.showToast(getContext(), "Select Waste Photo");
         } else if (wasteLng == null || wasteLat == null || wasteAddress == null
                 || wasteAddress.trim().isEmpty()) {
-            Utils.showToast(getContext(), "Provide Location");
+            Utils.showToast(getContext(), "Provide Dumping Site Location");
         } else {
             // all okay. send the report
             sendReport();
@@ -76,6 +79,9 @@ public class NotificationsFragment extends Fragment {
         String description = binding.etDescription.getText().toString().trim();
         String wasteType = ((RadioButton) binding.getRoot().findViewById(
                 binding.rbgWasteType.getCheckedRadioButtonId())).getText().toString();
+        String odour = ((RadioButton) binding.getRoot().findViewById(
+                binding.rbgOdour.getCheckedRadioButtonId())).getText().toString();
+        boolean critical = binding.cbCritical.isChecked();
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
@@ -89,8 +95,17 @@ public class NotificationsFragment extends Fragment {
             Utils.showToast(getContext(), "Unable to send the report. Retry.");
         }).addOnSuccessListener(taskSnapshot -> {
             // Upload doc
-            Report report = new Report(reportRef.getId(), description, wasteType, wasteLat,
-                    wasteLng, wasteAddress);
+            Report report = new Report(
+                    reportRef.getId(),
+                    FirebaseAuth.getInstance().getCurrentUser().getUid(),
+                    false,
+                    description,
+                    wasteType,
+                    odour,
+                    critical,
+                    wasteLat,
+                    wasteLng,
+                    wasteAddress);
 
             reportRef.set(report).addOnSuccessListener(
                     aVoid -> Utils.showToast(getContext(),

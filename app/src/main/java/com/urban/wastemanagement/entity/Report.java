@@ -1,13 +1,16 @@
 package com.urban.wastemanagement.entity;
 
-import android.location.Location;
-
-import java.util.List;
+import java.util.Date;
 
 public class Report {
     private String reportId;
+    private String reportedBy;
+    private Date reportedOn;
+    private boolean resolved;
     private String description;
     private String wasteType;
+    private String odour;
+    private boolean critical;
     private double lat;
     private double lng;
     private String address;
@@ -15,14 +18,52 @@ public class Report {
     public Report() {
     }
 
-    public Report(String reportId, String description, String wasteType, double lat, double lng,
+    public Report(String reportId, String reportedBy, boolean resolved, String description,
+            String wasteType, String odour, boolean critical, double lat, double lng,
             String address) {
         this.reportId = reportId;
+        this.reportedBy = reportedBy;
+        this.resolved = resolved;
         this.description = description;
         this.wasteType = wasteType;
+        this.odour = odour;
+        this.critical = critical;
         this.lat = lat;
         this.lng = lng;
         this.address = address;
+        this.reportedOn = new Date(System.currentTimeMillis());
+    }
+
+    public String getOdour() {
+        return odour;
+    }
+
+    public void setOdour(String odour) {
+        this.odour = odour;
+    }
+
+    public boolean isCritical() {
+        return critical;
+    }
+
+    public void setCritical(boolean critical) {
+        this.critical = critical;
+    }
+
+    public String getReportedBy() {
+        return reportedBy;
+    }
+
+    public void setReportedBy(String reportedBy) {
+        this.reportedBy = reportedBy;
+    }
+
+    public boolean isResolved() {
+        return resolved;
+    }
+
+    public void setResolved(boolean resolved) {
+        this.resolved = resolved;
     }
 
     public String getReportId() {

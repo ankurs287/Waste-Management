@@ -2,7 +2,6 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
     <fragment
@@ -12,14 +11,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.urban.wastemanagement.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_educational"
+        android:name="com.urban.wastemanagement.dashboard.EducationalFragment"
+        android:label="Educational"
+        tools:layout="@layout/fragment_educational" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.urban.wastemanagement.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_report"
+        android:name="com.urban.wastemanagement.report.ReportFragment"
+        android:label="Report Illegal Dumping Site"
+        tools:layout="@layout/fragment_report" />
 </navigation>
