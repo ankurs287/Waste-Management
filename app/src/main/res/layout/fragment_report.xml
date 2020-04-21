@@ -13,6 +13,7 @@
         tools:context=".report.ReportFragment">
 
         <EditText
+            android:id="@+id/et_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -26,12 +27,14 @@
             android:text="Waste type" />
 
         <RadioGroup
+            android:id="@+id/rbg_waste_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/rb_wet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -39,6 +42,7 @@
                 android:text="Wet" />
 
             <RadioButton
+                android:id="@+id/rb_dry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -46,6 +50,7 @@
                 android:text="Dry" />
 
             <RadioButton
+                android:id="@+id/rb_mixture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -60,12 +65,14 @@
             android:text="Odour" />
 
         <RadioGroup
+            android:id="@+id/rbg_odour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/rb_low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -73,6 +80,7 @@
                 android:text="Low" />
 
             <RadioButton
+                android:id="@+id/rb_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -80,6 +88,7 @@
                 android:text="Medium" />
 
             <RadioButton
+                android:id="@+id/rb_high"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -88,22 +97,26 @@
         </RadioGroup>
 
         <CheckBox
+            android:id="@+id/cb_critical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Critical" />
 
         <Button
+            android:id="@+id/btnWasteImage"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_marginBottom="10dp"
             android:text="Tap to upload waste image" />
 
         <TextView
+            android:id="@+id/tvAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Address" />
 
         <Button
+            android:id="@+id/btnLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tag Location" />
@@ -111,6 +124,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnReport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Report"
