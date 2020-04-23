@@ -1,5 +1,7 @@
 package com.urban.wastemanagement.home;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -9,15 +11,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.urban.wastemanagement.databinding.ItemReportBinding;
 import com.urban.wastemanagement.entity.Report;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
 
-    ArrayList<Report> reports = new ArrayList<>();
+    ArrayList<Report> reports;
     private LayoutInflater layoutInflater;
+    ArrayList<File> wasteImages;
 
-    public HomeAdapter(ArrayList<Report> reports) {
+    public HomeAdapter(ArrayList<Report> reports, ArrayList<File> wasteImages) {
         this.reports = reports;
+        this.wasteImages = wasteImages;
     }
 
     @NonNull
@@ -39,10 +44,6 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         return reports.size();
     }
 
-    void setReports(ArrayList<Report> reports) {
-        this.reports = reports;
-    }
-
 
     class HomeViewHolder extends RecyclerView.ViewHolder {
 
@@ -59,6 +60,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
                     HomeAdapter.this.reports.get(position).isResolved() ?
                             "Resolved" :
                             "Pending");
+
+            if (wasteImages.get(position) != null) {
+                Bitmap myBitmap = BitmapFactory.decodeFile(
+                        wasteImages.get(position).getAbsolutePath());
+                binding.imvWasteImage.setImageBitmap(myBitmap);
+            }
         }
     }
 }
