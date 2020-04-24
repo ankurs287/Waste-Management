@@ -1,4 +1,4 @@
-package com.urban.wastemanagement.dashboard;
+package com.urban.wastemanagement.Educational;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

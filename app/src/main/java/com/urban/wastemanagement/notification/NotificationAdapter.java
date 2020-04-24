@@ -1,4 +1,4 @@
-package com.urban.wastemanagement.home;
+package com.urban.wastemanagement.notification;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,19 +8,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.urban.wastemanagement.databinding.ItemReportBinding;
+import com.urban.wastemanagement.databinding.ItemNotificationBinding;
 import com.urban.wastemanagement.entity.Report;
 
 import java.io.File;
 import java.util.ArrayList;
 
-public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
+public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.HomeViewHolder> {
 
     ArrayList<Report> reports;
     private LayoutInflater layoutInflater;
     ArrayList<File> wasteImages;
 
-    public HomeAdapter(ArrayList<Report> reports, ArrayList<File> wasteImages) {
+    public NotificationAdapter(ArrayList<Report> reports, ArrayList<File> wasteImages) {
         this.reports = reports;
         this.wasteImages = wasteImages;
     }
@@ -31,7 +31,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         if (layoutInflater == null) {
             layoutInflater = LayoutInflater.from(parent.getContext());
         }
-        return new HomeViewHolder(ItemReportBinding.inflate(layoutInflater, parent, false));
+        return new HomeViewHolder(ItemNotificationBinding.inflate(layoutInflater, parent, false));
     }
 
     @Override
@@ -47,9 +47,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
 
     class HomeViewHolder extends RecyclerView.ViewHolder {
 
-        private ItemReportBinding binding;
+        private ItemNotificationBinding binding;
 
-        HomeViewHolder(ItemReportBinding binding) {
+        HomeViewHolder(ItemNotificationBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
@@ -57,7 +57,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         void bind(int position) {
             binding.tvAddress.setText(reports.get(position).getAddress());
             binding.tvResolved.setText(
-                    HomeAdapter.this.reports.get(position).isResolved() ?
+                    NotificationAdapter.this.reports.get(position).isResolved() ?
                             "Resolved" :
                             "Pending");
 

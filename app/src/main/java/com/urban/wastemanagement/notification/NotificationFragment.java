@@ -1,4 +1,4 @@
-package com.urban.wastemanagement.home;
+package com.urban.wastemanagement.notification;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -17,22 +17,22 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.urban.wastemanagement.databinding.FragmentHomeBinding;
+import com.urban.wastemanagement.databinding.FragmentNotifcationBinding;
 import com.urban.wastemanagement.entity.Report;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class NotificationFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
-    private HomeAdapter homeAdapter;
+    private FragmentNotifcationBinding binding;
+    private NotificationAdapter notificationAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentNotifcationBinding.inflate(inflater, container, false);
 
         binding.rvReported.setLayoutManager(
                 new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
@@ -70,7 +70,7 @@ public class HomeFragment extends Fragment {
                                     public void onSuccess(
                                             FileDownloadTask.TaskSnapshot taskSnapshot) {
                                         wasteImages.set(finalIndex, finalLocalFile);
-                                        homeAdapter.notifyDataSetChanged();
+                                        notificationAdapter.notifyDataSetChanged();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                             @Override
@@ -81,9 +81,9 @@ public class HomeFragment extends Fragment {
 
                     }
 
-                    homeAdapter = new HomeAdapter(reports, wasteImages);
+                    notificationAdapter = new NotificationAdapter(reports, wasteImages);
 
-                    binding.rvReported.setAdapter(homeAdapter);
+                    binding.rvReported.setAdapter(notificationAdapter);
 
                 })
                 .addOnFailureListener(new OnFailureListener() {
