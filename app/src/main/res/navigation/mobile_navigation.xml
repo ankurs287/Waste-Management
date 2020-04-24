@@ -2,23 +2,30 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@+id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.urban.wastemanagement.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@+id/navigation_educational">
 
     <fragment
         android:id="@+id/navigation_educational"
-        android:name="com.urban.wastemanagement.dashboard.EducationalFragment"
+        android:name="com.urban.wastemanagement.Educational.EducationalFragment"
         android:label="Educational"
         tools:layout="@layout/fragment_educational" />
+
+    <fragment
+        android:id="@+id/navigation_home_collection"
+        android:name="com.urban.wastemanagement.homecollection.HomeCollectionFragment"
+        android:label="Home Collection"
+        tools:layout="@layout/fragment_home_collection" />
 
     <fragment
         android:id="@+id/navigation_report"
         android:name="com.urban.wastemanagement.report.ReportFragment"
         android:label="Report Illegal Dumping Site"
         tools:layout="@layout/fragment_report" />
+
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.urban.wastemanagement.notification.NotificationFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifcation" />
+
 </navigation>

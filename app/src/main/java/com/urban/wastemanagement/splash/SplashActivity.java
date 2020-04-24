@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.firebase.ui.auth.AuthMethodPickerLayout;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,12 +30,21 @@ public class SplashActivity extends AppCompatActivity {
                 new AuthUI.IdpConfig.PhoneBuilder().build(),
                 new AuthUI.IdpConfig.AnonymousBuilder().build());
 
+        AuthMethodPickerLayout customAuthMethodLayout = new AuthMethodPickerLayout
+                .Builder(R.layout.login_layout)
+                .setAnonymousButtonId(R.id.btn_guest)
+                .setPhoneButtonId(R.id.btn_phone)
+                .build();
+
 
         if (FirebaseAuth.getInstance().getCurrentUser() == null) {
             startActivityForResult(
                     AuthUI.getInstance()
                             .createSignInIntentBuilder()
+                            .setTheme(R.style.AppThemeFirebaseAuth)
+                            .setAuthMethodPickerLayout(customAuthMethodLayout)
                             .setAvailableProviders(providers)
+                            .setAlwaysShowSignInMethodScreen(true)
                             .build(),
                     RC_SIGN_IN);
         } else {
