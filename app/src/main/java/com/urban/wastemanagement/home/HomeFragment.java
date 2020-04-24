@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
                         }
                         File finalLocalFile = localFile;
                         int finalIndex = index;
-                        storageRef.child("report_images/" + report.getReportId() + ".jpg")
+                        storageRef.child("Report_Images/" + report.getReportId() + ".jpg")
                                 .getFile(localFile).addOnSuccessListener(
                                 new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                                     @Override

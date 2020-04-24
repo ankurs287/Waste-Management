@@ -25,6 +25,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         List<AuthUI.IdpConfig> providers = Arrays.asList(
+
                 new AuthUI.IdpConfig.PhoneBuilder().build(),
                 new AuthUI.IdpConfig.AnonymousBuilder().build());
 
