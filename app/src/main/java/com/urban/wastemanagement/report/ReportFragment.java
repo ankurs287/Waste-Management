@@ -64,8 +64,8 @@ public class ReportFragment extends Fragment {
             Utils.showToast(getContext(), "Choose Waste Type");
         } else if (binding.rbgOdour.getCheckedRadioButtonId() == -1) {
             Utils.showToast(getContext(), "Choose Odour");
-        } else if (wasteImage == null) {
-            Utils.showToast(getContext(), "Select Waste Photo");
+//        } else if (wasteImage == null) {
+//            Utils.showToast(getContext(), "Select Waste Photo");
         } else if (wasteLng == null || wasteLat == null || wasteAddress == null
                 || wasteAddress.trim().isEmpty()) {
             Utils.showToast(getContext(), "Provide Dumping Site Location");
@@ -88,13 +88,13 @@ public class ReportFragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference reportRef = db.collection("reports").document();
 
-        Uri file = Uri.fromFile(new File(wasteImage.getPath()));
-        StorageReference imageRef = storageRef.child("report_images/" + reportRef.getId() + ".jpg");
-        UploadTask uploadTask = imageRef.putFile(file);
-        uploadTask.addOnFailureListener(exception -> {
-            Utils.showToast(getContext(), "Unable to send the report. Retry.");
-        }).addOnSuccessListener(taskSnapshot -> {
-            // Upload doc
+//        Uri file = Uri.fromFile(new File(wasteImage.getPath()));
+//        StorageReference imageRef = storageRef.child("report_images/" + reportRef.getId() + ".jpg");
+//        UploadTask uploadTask = imageRef.putFile(file);
+//        uploadTask.addOnFailureListener(exception -> {
+//            Utils.showToast(getContext(), "Unable to send the report. Retry.");
+//        }).addOnSuccessListener(taskSnapshot -> {
+//            // Upload doc
             Report report = new Report(
                     reportRef.getId(),
                     FirebaseAuth.getInstance().getCurrentUser().getUid(),
@@ -111,8 +111,8 @@ public class ReportFragment extends Fragment {
                     aVoid -> Utils.showToast(getContext(),
                             "Reported Successfully")).addOnFailureListener(
                     e -> Utils.showToast(getContext(), "Unable to send the report. Retry."));
-        });
-    }
+        ;
+}
 
     @Override
     public void onActivityResult(int requestCode, final int resultCode, Intent data) {
