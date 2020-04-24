@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b6"
     android:layout_gravity="center"
-    android:gravity="center"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_phone"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="phone numner" />
+        android:background="@drawable/bgcard3"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
 
-    <Button
-        android:id="@+id/btn_guest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Guest" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:fontFamily="@font/robotolight"
+            android:textColor="@color/ef_white"
+            android:textSize="30dp"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            ></TextView>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_phone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bgcard"
+            android:text="Mobile"></Button>
+
+        <Button
+            android:id="@+id/btn_guest"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bgcard"
+            android:text="Guest" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Developed by Group 1 for SOC302 : Urban Sociology"
+            android:fontFamily="@font/robotolight"
+            android:textColor="@color/ef_white"
+            android:textSize="12dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            ></TextView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

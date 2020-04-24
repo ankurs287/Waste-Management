@@ -55,6 +55,12 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         }
 
         void bind(int position) {
+
+            if(reports.get(position).isResolved())
+            {
+
+            }
+
             binding.tvAddress.setText(reports.get(position).getAddress());
             binding.tvResolved.setText(
                     NotificationAdapter.this.reports.get(position).isResolved() ?

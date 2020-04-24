@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Educational.EducationalFragment">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="7dp"
         android:orientation="vertical">
+
+        <ViewFlipper
+            android:id="@+id/view_flipper"
+            android:layout_margin="10dp"
+
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+        </ViewFlipper>
 
         <TextView
             android:layout_width="match_parent"
@@ -22,20 +37,38 @@
             android:text="Videos" />
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-        android:id="@+id/youtube_player_view"
-        android:layout_width="match_parent"
+            android:id="@+id/youtube_player_view"
+            android:layout_width="match_parent"
             android:layout_margin="5dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:showFullScreenButton="false"
-        app:videoId="r4egSFiZf6M" />
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showFullScreenButton="false"
+            app:videoId="r4egSFiZf6M" />
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showFullScreenButton="false"
+            app:videoId="v1y356JzvLg" />
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             app:showFullScreenButton="false"
-            app:videoId="4JDGFNoY-rQ" /></LinearLayout>
+            app:videoId="4JDGFNoY-rQ" />
 
 
 
-</RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+</ScrollView>

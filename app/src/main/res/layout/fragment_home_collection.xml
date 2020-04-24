@@ -4,29 +4,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/b3"
     tools:context=".homecollection.HomeCollectionFragment">
 
     <TextView
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Garbage will be picked up from your location between 8 am to 12 pm" />
 
-    <EditText
-        android:id="@+id/tv_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Address" />
 
-    <Button
-        android:id="@+id/btn_location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tag Location" />
 
-    <Button
-        android:id="@+id/btn_okay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Address" />
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:alpha="0.98"
+        android:background="@drawable/bgcard"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="Report waste of your home"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/robotolight"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ></TextView>
+
+
+        <EditText
+            android:id="@+id/tv_address"
+            android:fontFamily="@font/robotomedium"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edittext"
+            android:hint="Address"
+            android:paddingLeft="20dp" />
+
+        <Button
+            android:id="@+id/btn_location"
+            android:textColor="@color/ef_white"
+            android:fontFamily="@font/robotomedium"
+            android:background="@drawable/buttonbg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Tag Location" />
+
+        <Button
+            android:id="@+id/btn_okay"
+            android:textColor="@color/ef_white"
+            android:fontFamily="@font/robotomedium"
+            android:background="@drawable/buttonbg3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="Update Address" />
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -3,15 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_launcher_background">
+    android:background="@drawable/b1">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bgcard2"
+        android:background="@drawable/bgcard"
         android:orientation="vertical"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         tools:context=".report.ReportFragment">
 
         <EditText
@@ -115,12 +118,12 @@
 
         <CheckBox
             android:id="@+id/cb_critical"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:layout_margin="10dp"
             android:fontFamily="@font/robotomedium"
-            android:paddingLeft="10dp"
             android:text="Is Critical ?" />
 
         <Button
@@ -134,39 +137,45 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:background="@drawable/bgcard4"
+            android:layout_height="70dp"
             android:orientation="horizontal"
             android:layout_margin="10dp"
-            android:layout_weight="3"
+            android:layout_weight="4"
             >
             <TextView
                 android:id="@+id/tvAddress"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/robotobold"
-                android:textSize="20dp"
-                android:layout_weight="2"
-                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/robotomedium"
+                android:textSize="15dp"
+                android:layout_margin="10dp"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:text="Address" />
 
             <Button
                 android:id="@+id/btnLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginRight="10dp"
-                android:text="Tag Location" />
+                android:layout_gravity="center"
+                android:background="@drawable/location"
+                android:layout_width="50dp"
+                android:layout_margin="10dp"
+                android:layout_height="50dp"
+
+                />
         </LinearLayout>
 
 
         <Button
             android:id="@+id/btnReport"
+            android:textColor="@color/ef_white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/buttonbg"
             android:text="Report"
 

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -17,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.urban.wastemanagement.R;
 import com.urban.wastemanagement.databinding.FragmentNotifcationBinding;
 import com.urban.wastemanagement.entity.Report;
 
@@ -95,4 +97,7 @@ public class NotificationFragment extends Fragment {
 
         return binding.getRoot();
     }
+
+
+
 }
