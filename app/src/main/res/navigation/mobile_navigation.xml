@@ -11,6 +11,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/navigation_collection"
+        android:name="com.urban.wastemanagement.collection.CollectionFragment"
+        android:label="Home Collection"
+        tools:layout="@layout/fragment_collection" />
+
+    <fragment
         android:id="@+id/navigation_educational"
         android:name="com.urban.wastemanagement.dashboard.EducationalFragment"
         android:label="Educational"
