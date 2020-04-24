@@ -12,4 +12,4 @@
         android:scaleType="centerCrop"
         android:src="@color/colorPrimary"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
