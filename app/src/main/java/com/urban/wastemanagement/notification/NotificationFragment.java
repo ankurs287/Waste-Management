@@ -60,12 +60,12 @@ public class NotificationFragment extends Fragment {
                         StorageReference storageRef = storage.getReference();
                         File localFile = null;
                         try {
-                            localFile = File.createTempFile(report.getReportId(), "jpg");
+                            localFile = File.createTempFile(report.getReportId(), ".jpg");
                         } catch (IOException ignored) {
                         }
                         File finalLocalFile = localFile;
                         int finalIndex = index;
-                        storageRef.child("Report_Images/" + report.getReportId() + ".jpg")
+                        storageRef.child("report_images/" + report.getReportId() + ".jpg")
                                 .getFile(localFile).addOnSuccessListener(
                                 new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                                     @Override
@@ -78,6 +78,7 @@ public class NotificationFragment extends Fragment {
                             @Override
                             public void onFailure(@NonNull Exception exception) {
                                 // Handle any errors
+                                int isdsdx = 0;
                             }
                         });
 

@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:957103967055:android:3d19e70153950f2423933a",
+        "mobilesdk_app_id": "1:957103967055:android:793394d4e46b1a4523933a",
         "android_client_info": {
           "package_name": "com.urban.wastemanagement"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "957103967055-g9pp39lkku759oubjkpf4t57oanidava.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.urban.wastemanagement",
+            "certificate_hash": "459de7c33938f4e57f56e06de88d680d28f9ed95"
+          }
+        },
         {
           "client_id": "957103967055-7b07h7buuh0a3hfaoscguk36ntsk3mvr.apps.googleusercontent.com",
           "client_type": 3
