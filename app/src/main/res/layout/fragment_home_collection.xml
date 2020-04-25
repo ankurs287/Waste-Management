@@ -14,7 +14,7 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Garbage will be picked up from your location between 8 am to 12 pm" />
+        android:text="Garbage will be picked up from your location between 8:00 AM to 2:00 PM" />
 
 
 
